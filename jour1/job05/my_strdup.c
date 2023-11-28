@@ -1,9 +1,12 @@
 #include <stdlib.h>
-#include <stdio.h>
+
+int my_strlen(char *str);
 
 char *my_strdup(char *src)
 {
-    char *str = (char*)malloc(sizeof(char) * (sizeof(src)));
+    int str_length = my_strlen(src);
+
+    char *str = (char*)malloc(sizeof(char*) * str_length);
 
     str = src;
 
