@@ -1,6 +1,7 @@
 #include <stdlib.h>
 
 int my_strlen(char *str);
+char *my_strcpy(char *dest, char *src);
 
 char *my_strdup(char *src)
 {
@@ -8,7 +9,7 @@ char *my_strdup(char *src)
 
     char *str = (char*)malloc(sizeof(char*) * str_length);
 
-    str = src;
+    my_strcpy(str, src);
 
     return str;
 }
