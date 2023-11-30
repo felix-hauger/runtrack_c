@@ -10,8 +10,10 @@ int my_atoi(char *str)
     // subtract the code from '0' to get numerical
     // value and multiply res by 10 to shuffle
     // digits left to update running total
-    for (int i = 0; str[i] != '\0' && str[i] >= '0' && str[i] <= '9'; i++) {
-        result = result * 10 + str[i] - 48;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] < '0' || str[i] > '9')
+            break;
+        result = result * 10 + str[i] - '0'; // ASCII value 48
     }
 
     return result;
